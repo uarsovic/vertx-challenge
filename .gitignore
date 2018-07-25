@@ -1,3 +1,9 @@
+.metadata
+RemoteSystemsTempFiles
+target
+.settings
+.classpath
+.project
 # Compiled class file
 *.class
 
