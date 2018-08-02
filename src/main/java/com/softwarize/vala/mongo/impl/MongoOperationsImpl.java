@@ -32,9 +32,10 @@ public class MongoOperationsImpl implements MongoOperations{
 
 	//update country if it exist in the DB
 	private void updateCountry(String country, Integer count) {
+		count++;
 		JsonObject query = new JsonObject().put(CommonStrings.COUNTRY, country);
 		JsonObject update = new JsonObject().put(CommonStrings.COUNTRY, country).put(CommonStrings.REQUEST_COUNT,
-				count++);
+				count);
 		// had problems with updateDocument method so I used replce
 		mongoClient.replaceDocuments(CommonStrings.COLLECTION_NAME, query, update, result -> {
 			// here we can implement logic for error handling
